@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.chat.Chatpeer
+Class-Path: comp90015a2.Chatpeer.main
+
