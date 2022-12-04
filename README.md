@@ -1,7 +1,6 @@
 A distributed P2P chat system which allows users establish TCP connection, communicate, find nearby users, engage in group chat, and receive group notifications within LAN.   
 This Java program uses multi-threading, socket programming, JSON serialization, TCP/IP protocols and Gradle. 
-Completed in partial fulfilment of the course COMP90015 Distributed Systems at UniMelb. Received 10/10 on the code and 7.5/10 on the report. 
-
+Author: Cheng,A.
 
 # Optional JAR Starter
 
