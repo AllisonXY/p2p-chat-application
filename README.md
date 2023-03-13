@@ -196,6 +196,7 @@ peerA [(server) -> (client) peerB] sends a neighbors packet containing:
 
 ```
 
+
 ### Search Network Protocol
 peerA  listens on localhost:4444
 peerB  listens on localhost:5555
@@ -224,8 +225,6 @@ peerB->peerA sends a hostchange packet (host: 127.0.0.1:5555)
 peerB->peerA sends a join packet (roomid: roomA)
 ...
 peerA->peerB sends a roomchange packet (roomid: roomA)
-
----
 
 peerA "#searchnetwork" - see that only neighbor of this node is peerB
 
