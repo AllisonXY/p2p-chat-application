@@ -40,10 +40,10 @@ i32: int
 
 
 #### join
-
-```json
 roomchange s2c response expected 
 (both to the sender & current room if != “” & entering room if != “”)
+
+```json
 {
     "type":"join",
     "roomid": "string"
