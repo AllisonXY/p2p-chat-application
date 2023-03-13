@@ -2,7 +2,7 @@
 This is a distributed P2P (Point-to-point) chat app written in Java that enables users to establish TCP connections, communicate, find nearby users, engage in group chat, and receive group notifications within a LAN environment. The application uses multi-threading, socket programming, JSON serialization, TCP/IP protocols, and Gradle. Developed by Allison Cheng.
 
 
-# JAR Starter
+## JAR Starter
 
 The program is managed by Gradle. The following files will be generated in the target/lib directory:
 
