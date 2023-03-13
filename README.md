@@ -227,9 +227,7 @@ peerA->peerB sends a roomchange packet (roomid: roomA)
 
 ---
 
-peerA "#searchnetwork" 
-
-# see that only neighbor of this node is peerB
+peerA "#searchnetwork" - see that only neighbor of this node is peerB
 
 peerA connects to localhost:5555 (peerB)
 peerA->peerB sends a listneighbors packet
@@ -240,11 +238,11 @@ peerB->peerA sends a roomlist packet (rooms: [{"roomid": "roomB", "count": 1}])
 
 peerA->peerB sends a quit packet
 
-# new peer to check 127.0.0.1:6666 (peerC)
+new peer to check 127.0.0.1:6666 (peerC)
 
 ... (same as above, swap B with C)
 
-# new peer to check 127.0.0.1:7777 (peerD)
+new peer to check 127.0.0.1:7777 (peerD)
 
 ... (no rooms found, no neighbors other than peerC)
 
