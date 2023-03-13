@@ -74,7 +74,7 @@ The Uber jar is a fat jar that packages dependencies as well.
 ```json
 {
     "type":"message",
-    "content": string
+    "content": "string"
 }
 ```
 
@@ -118,7 +118,7 @@ The Uber jar is a fat jar that packages dependencies as well.
 ```json
 {
       "type":"roomcontents",
-      "roomid": string,
+      "roomid": "string",
       "identities": ["string"],
 }
 ```
@@ -169,7 +169,7 @@ peerB [(client) -> (server) peerA] sends a hostchange packet:
     "host": "127.0.0.1:5555"
 }
 
-<br><br>
+<br>
 ### List Neighbors Protocol
 peerA (server) listens on localhost:4444
 peerB (client) listens on localhost:5555
@@ -196,7 +196,7 @@ peerA [(server) -> (client) peerB] sends a neighbors packet containing:
 
 ```
 
-<br><br>
+<br>
 ### Search Network Protocol
 peerA  listens on localhost:4444
 peerB  listens on localhost:5555
@@ -225,6 +225,7 @@ peerB->peerA sends a hostchange packet (host: 127.0.0.1:5555)
 peerB->peerA sends a join packet (roomid: roomA)
 ...
 peerA->peerB sends a roomchange packet (roomid: roomA)
+...
 
 peerA "#searchnetwork" - see that only neighbor of this node is peerB
 
