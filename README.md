@@ -26,23 +26,11 @@ The Uber jar is a fat jar that packages dependencies as well.
 #quit
 ```
 
-## Wire
-
-### Types
-
-```json
-identity: [a-zA-Z0-9]{3,16}
-string: char[]
-i32: int
-```
-
 ### C2S
 
-
-#### join
-roomchange s2c response expected 
-(both to the sender & current room if != “” & entering room if != “”)
-
+##### join
+- roomchange s2c response expected 
+- (both to the sender & current room if != “” & entering room if != “”)
 ```json
 {
     "type":"join",
@@ -52,10 +40,9 @@ roomchange s2c response expected
 
 
 #### who
-
+- roomcontents s2c response expected.
+- on response output formatted room contents to stdout
 ```json
-roomcontents s2c response expected.
-on response output formatted room contents to stdout
 {
       "type":"who",
       "roomid": "string"
@@ -63,10 +50,9 @@ on response output formatted room contents to stdout
 ```
 
 #### list
-
+- roomlist s2c response expected.
+- on response output formatted list to stdout
 ```json
-roomlist s2c response expected.
-on response output formatted list to stdout
 {
     "type":"list"
 }
@@ -74,19 +60,18 @@ on response output formatted list to stdout
 
 
 #### quit
-
+- roomchange s2c response expected (both to the sender & current room).
+- on response close connection socket.
 ```json
-roomchange s2c response expected (both to the sender & current room).
-on response close connection socket.
 {
     "type":"quit"
 }
 ```
 
 #### message
+- message s2c response expected (both to the sender & current room)
+- on response output formatted message to stdout
 ```json
-message s2c response expected (both to the sender & current room)
-on response output formatted message to stdout
 {
     "type":"message",
     "content": string
@@ -95,8 +80,8 @@ on response output formatted message to stdout
 
 
 #### hostchange
+- no s2c response expected
 ```json
-no s2c response expected
 {
 "type":"hostchange",
 "host": "string"
@@ -104,10 +89,9 @@ no s2c response expected
 ```
 
 #### listneighbors
+- neighbors s2c response expected
+- on response output formatted message to stdout
 ```json
-neighbors s2c response expected
-on response output formatted message to stdout
-
 {
 "type": "listneighbors"
 }
@@ -118,10 +102,9 @@ on response output formatted message to stdout
 ### S2C
 
 #### roomchange
-
+- response to join, quit c2s and disconnection (abrupt/unplanned) 
+- if in a room, to other connections in that room
 ```json
-response to join, quit c2s and disconnection (abrupt/unplanned) 
-if in a room, to other connections in that room
 {
     "type":"roomchange",
     "identity": "string",
@@ -131,8 +114,8 @@ if in a room, to other connections in that room
 ```
 
 #### roomcontents
+- response to who c2s.
 ```json
-response to who c2s.
 {
       "type":"roomcontents",
       "roomid": string,
@@ -141,8 +124,8 @@ response to who c2s.
 ```
 
 #### roomlist
+- response to list c2s.
 ```json
-response to list c2s.
 {
     "type":"roomlist",
     "rooms": [{"roomid": "string", "count": "int"}]
@@ -150,8 +133,8 @@ response to list c2s.
 ```
 
 #### message
+- response to message c2s.
 ```json
-response to message c2s.
 {
     "type":"message",
     "identity": "string",
@@ -160,8 +143,8 @@ response to message c2s.
 ```
 
 #### neighbors
+- response to a listneighbors c2s.
 ```json
-response to a listneighbors c2s.
 {
     "type": "neighbors",
     "neighbors": ["string"]
@@ -170,7 +153,6 @@ response to a listneighbors c2s.
 
 
 ### Connect Protocol
-```json
 peerA (server) listens on localhost:4444
 peerB (client) listens on localhost:5555
 
@@ -186,11 +168,9 @@ peerB [(client) -> (server) peerA] sends a hostchange packet:
     "type": "hostchange",
     "host": "127.0.0.1:5555"
 }
-```
 
 
 ### List Neighbors Protocol
-```json
 peerA (server) listens on localhost:4444
 peerB (client) listens on localhost:5555
 peerC (client) listens on localhost:6666
@@ -208,7 +188,7 @@ peerB [(client) -> (server) peerA] sends a listneighbors packet
 ... (peerA checks the mapping it has for connection -> host)
 
 peerA [(server) -> (client) peerB] sends a neighbors packet containing:
-
+```json
 {
     "type": "neighbors"
     "neighbors": ["127.0.0.1:6666"]
@@ -217,7 +197,6 @@ peerA [(server) -> (client) peerB] sends a neighbors packet containing:
 ```
 
 ### Search Network Protocol
-```json
 peerA  listens on localhost:4444
 peerB  listens on localhost:5555
 peerC  listens on localhost:6666
@@ -269,4 +248,3 @@ peerA->peerB sends a quit packet
 
 ... (no rooms found, no neighbors other than peerC)
 
-```
