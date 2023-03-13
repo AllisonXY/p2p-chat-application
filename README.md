@@ -169,7 +169,7 @@ peerB [(client) -> (server) peerA] sends a hostchange packet:
     "host": "127.0.0.1:5555"
 }
 
-
+<br><br>
 ### List Neighbors Protocol
 peerA (server) listens on localhost:4444
 peerB (client) listens on localhost:5555
@@ -196,7 +196,7 @@ peerA [(server) -> (client) peerB] sends a neighbors packet containing:
 
 ```
 
-
+<br><br>
 ### Search Network Protocol
 peerA  listens on localhost:4444
 peerB  listens on localhost:5555
