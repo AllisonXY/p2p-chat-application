@@ -1,5 +1,5 @@
 # P2P Chat Application
-This is a distributed P2P (Point-to-point) chat app written in Java that enables users to establish TCP connections, communicate, find nearby users, engage in group chat, and receive group notifications within a LAN environment. The application uses multi-threading, socket programming, JSON serialization, TCP/IP protocols, and Gradle. Developed by Allison Cheng.
+This is a distributed P2P (Point-to-point) chat app written in Java that enables users to act as a client/server hybrid, establish TCP connections, communicate, find nearby users, engage in group chat, and receive group notifications within a LAN environment. The application uses multi-threading, socket programming, JSON serialization, TCP/IP protocols, and Gradle. Developed by Allison Cheng.
 
 
 ## JAR Starter
@@ -24,7 +24,7 @@ client/target/lib/client.jar
 #quit
 ```
 
-### C2S
+### Client to Server
 
 ##### join
 - roomchange s2c response expected 
@@ -97,7 +97,7 @@ client/target/lib/client.jar
 
 
 
-### S2C
+### Server to Client
 
 #### roomchange
 - response to join, quit c2s and disconnection (abrupt/unplanned) 
